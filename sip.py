@@ -61,11 +61,28 @@ fin = open("modelo_LINDO.ltx","w")
 fin.write(minimizacion)
 fin.write("\n")
 fin.write("st \n")
+
+print("Funcion a Minimizar: ")
+print("			", minimizacion)
+
+print("La Capacidad es: ",sum(capacidadPlanta))
+print("La Demanda es: ", sum(demandaCentro))
+
+print("Capacidades: ")
 for c in restrCapacidad:
 	fin.write(c)
 	fin.write("\n")
+	print("			", c)
+
+print("Demandas: ")
 for d in restrDemanda:
 	fin.write(d)
 	fin.write("\n")
+	print("			", d)
+
+
+if sum(capacidadPlanta) < sum(demandaCentro):
+	print("No hay solucion")
+
 
 fin.close()
